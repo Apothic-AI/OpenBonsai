@@ -1,0 +1,28 @@
+{
+  "model": "Qwen/Qwen3-0.6B",
+  "teacher": "Qwen/Qwen3-0.6B",
+  "train_jsonl": "data/calibration.jsonl",
+  "text_field": "text",
+  "output_dir": "runs/qwen3-0.6b-ternary",
+  "sequence_length": 1024,
+  "micro_batch_size": 1,
+  "gradient_accumulation_steps": 16,
+  "max_steps": 2000,
+  "learning_rate": 0.00002,
+  "weight_decay": 0.1,
+  "full_precision_warm_fraction": 0.05,
+  "temperature": 2.0,
+  "ce_weight": 0.25,
+  "kl_weight": 0.75,
+  "hidden_weight": 0.1,
+  "qat": {
+    "mode": "ternary",
+    "group_size": 128,
+    "initial_beta": 1.0,
+    "final_beta": 20.0,
+    "activation_noise_std": 0.002,
+    "quantize_embeddings": true,
+    "quantize_lm_head": true
+  }
+}
+

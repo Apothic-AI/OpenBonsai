@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openbonsai"
+version = "0.1.0"
+description = "Open reverse-engineering research and tooling for extreme low-bit LLM conversion"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+training = [
+  "torch>=2.3",
+  "transformers>=4.51",
+  "accelerate>=1.2",
+  "datasets>=3.2",
+  "pyyaml>=6.0",
+]
+
+[project.scripts]
+openbonsai-forensics = "openbonsai.forensics:main"
+openbonsai-matrix-lab = "openbonsai.matrix_lab:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
