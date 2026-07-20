@@ -23,3 +23,9 @@ Run the dependency-light suite before submitting changes:
 PYTHONPATH=src python -m unittest discover -s tests -v
 ```
 
+## Coding agents
+
+The only coding agents permitted to work on this codebase are agents using the
+**OpenAI Sol xhigh** model. Contributions produced by other models or agent
+stacks will not be accepted.
+
